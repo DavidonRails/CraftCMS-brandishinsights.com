@@ -1,0 +1,449 @@
+{% import "_macros" as siteMacros %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% include "_includes/google_tag_manager" %}
+    <title>{% block title %}{% endblock %}</title>
+    <!-- Meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description" content="{% block description %}{% endblock%}">
+    <meta name="author" content="Brandish Insights">    
+    <meta name="keywords" content="Brand analytics, brand tool">   
+    {% if (craft.app.config.general.devMode)  %}
+        <META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
+    {% endif %} 
+    <link rel="shortcut icon" href="favicon.ico">  
+    <link href='https://fonts.googleapis.com/css?family=Roboto:400,300,500,300italic,400italic,500italic,700,700italic' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Noto+Sans:400,400italic,700,700italic' rel='stylesheet' type='text/css'>
+    <!-- FontAwesome JS-->
+    {# <script type="text/javascript" src="/assets/plugins/font-awesome/js/fontawesome-all.min.js"></script> #}
+    <!-- Global CSS -->
+    {# <link rel="stylesheet" href="/assets/plugins/bootstrap/css/bootstrap.min.css">    #}
+    <!-- Plugins CSS -->    
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    {# <link rel="stylesheet" href="/assets/plugins/flexslider/flexslider.css"> #}
+    
+    <link href="https://fonts.googleapis.com/css?family=Archivo+Black|Archivo+Narrow:400,700,700i&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    {# <link rel="stylesheet" href="\assets\css\index.css"> #}
+    <link rel="stylesheet" href="\assets\css\main.css?v=1">
+    <link rel="stylesheet" href="\assets\css\design.css?v=1">
+
+    <link rel="icon" 
+      type="image/png" 
+      href="/favicon.png">
+
+      <script>
+  window._wcq = window._wcq || [];
+  window._wcq.push({
+    id: "_all",
+    options: {
+      customFont: "Archivo Narrow"
+    }
+  });
+</script>
+      {% block schema %}{% endblock %}
+</head> 
+
+<body>
+{% include "_includes/google_tag_manager_no_script" %}
+<header class="px-lg-5{% block headerClass %} {% endblock %}">
+      <nav class="navbar navbar-expand-lg navbar-dark">
+        <a class="navbar-brand" href="#"><img src="img/logo.png" class="img-fluid" alt=""></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbar">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item px-2">
+              <a class="nav-link px-2{{ siteMacros.is_active("") }}" href="/">Home</a>
+            </li>
+            <li class="nav-item px-2">
+              <a class="nav-link px-2{{ siteMacros.is_active("blog") }}" href="/blog">Blog</a>
+            </li>
+            <li class="nav-item px-2">
+              <a class="nav-link px-2{{ siteMacros.is_active("marketing-show") }}" href="/marketing-show">Marketing Is Broken</a>
+            </li>
+            <li class="nav-item px-2">
+              <a class="nav-link px-2" href="https://deals.brandishinsights.com/brand-analytics/" Target="_New">Webinar</a>
+            </li>
+            <li class="nav-item px-2">
+              <a class="nav-link px-2{{ siteMacros.is_active("contact-us") }}" href="/contact-us">Contact Us</a>
+            </li>
+           
+          </ul>
+        </div>
+      </nav>
+    </header>  
+    {% block content %} {% endblock %}
+        <div class="blog-signup-block">
+        <div class="container text-center">
+            <h3 class="block-heading">Get Free Brand Measurement Resources</h3>
+            <div class="block-intro">Subscribe to our newsletter to be the first to get these freebies.</div>
+            <form class="subscribe-form form-inline justify-content-center" novalidate="novalidate">
+                <div class="form-group">
+                    <button type="button" data-target="#drip-sign-up" data-toggle="modal"class="btn btn-primary rounded">Subscribe</button>  
+                </div>                              
+            </form>
+        </div><!--//container-->
+    </div><!--//blog-signup-block-->
+        
+    <footer>
+      <div class="container">
+        <div class="row py-4 justify-content-center text-center">
+          <div class="col-lg-3 py-3">
+            <a href="#"><img src="/img/f-logo.png" class="img-fluid" alt=""></a>
+          </div>
+          <div class="col-lg-3 col-md-4 col-6">
+            <p class="text-uppercase font-weight-bold mt-4 pt-2"><a href="/blog">blog</a></p>
+            <ul class="mt-4 list-unstyled">
+              <li><a href="#"></a></li>
+            </ul>
+          </div>
+          <div class="col-lg-3 col-md-4 col-6">
+            <p class="text-uppercase font-weight-bold mt-4 pt-2"><a href="/marketing-is-broken">Marketing is Broken</a></p>
+            <ul class="mt-4 list-unstyled">
+              <li><a href="#"></a></li>
+            </ul>
+          </div>
+          <div class="col-lg-3 col-md-4">
+            <p class="text-uppercase font-weight-bold mt-4 pt-2"><a href="/contact-us">Contact Us</a></p>
+            <ul class="mt-4 list-unstyled">
+            </ul>
+          </div>
+        </div>
+        <div class="row justify-content-between bottom pb-5">
+          <div class="col-lg-4 col-sm-6 order-sm-1 order-2 py-3">
+            <p class="m-0 small">Copyright 2017-{{ now.year }} Brandish Insights</p>
+            <p class="m-0 small"><a href="/privacy-policy">Privacy Policy</a> & <a href="/terms-of-service">Terms of Service</a></p>
+          </div>
+          <div class="col-lg-2  col-sm-6 order-sm-2 order-1 py-3 text-right">
+            <p class="m-0 small">Connect with us</p>
+            <ul class="m-0 list-inline list-unstyled">
+              <li class="list-inline-item">
+                <a href="https://facebook.com/brandishinsights" target="_New"><i class="fab fa-facebook-f"></i></a>
+              </li>
+              <li class="list-inline-item">
+                <a href="https://www.linkedin.com/company/brandish-insights/" target="_new"><i class="fab fa-linkedin"></i></a>
+              </li>
+              <li class="list-inline-item">
+                <a href="https://www.youtube.com/channel/UCF1_oY9d2yJ1NlcJf2YBHDg" target="_New"><i class="fab fa-youtube"></i></a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </footer>
+    
+    <!-- Video Modal -->
+    <div class="modal modal-video" id="modal-video" tabindex="-1" role="dialog" aria-labelledby="videoModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <h4 id="videoModalLabel" class="modal-title sr-only">Video Tour</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="video-container embed-responsive embed-responsive-16by9">
+                        <script src="https://fast.wistia.com/embed/medias/0b71j3gpgc.jsonp" async></script>
+                        <script src="https://fast.wistia.com/assets/external/E-v1.js" async></script>
+                        <div class="wistia_responsive_padding" style="padding:56.25% 0 0 0;position:relative;">
+                            <div class="wistia_responsive_wrapper" style="height:100%;left:0;position:absolute;top:0;width:100%;">
+                                <div class="wistia_embed wistia_async_0b71j3gpgc videoFoam=true" style="height:100%;position:relative;width:100%">
+                                    <div class="wistia_swatch" style="height:100%;left:0;opacity:0;overflow:hidden;position:absolute;top:0;transition:opacity 200ms;width:100%;">
+                                        <img src="https://fast.wistia.com/embed/medias/0b71j3gpgc/swatch" style="filter:blur(5px);height:100%;object-fit:contain;width:100%;" alt="" onload="this.parentNode.style.opacity=1;" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div><!--//video-container-->
+                </div><!--//modal-body-->
+            </div><!--//modal-content-->
+        </div><!--//modal-dialog-->
+    </div><!--//modal-->
+    
+    <!-- Login Modal -->
+    <div class="modal modal-auth modal-login" id="login-modal" tabindex="-1" role="dialog" aria-labelledby="loginModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <h4 id="loginModalLabel" class="modal-title text-center">Log in to your account</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="social-login text-center">                        
+                        <ul class="social-buttons list-unstyled">
+                            <li><a href="#" class="btn btn-social btn-google btn-block"><span class="icon-holder"><i class="fab fa-google" ></i></span><span class="btn-text">Log in with Google</span></a></li>
+                            <li><a href="#" class="btn btn-social btn-facebook btn-block"><span class="icon-holder"><i class="fab fa-facebook-f" ></i></span><span class="btn-text">Log in with Facebook</span></a></li>
+                        </ul>
+                    </div>
+                    <div class="divider">
+                        <span class="or-text">OR</span>
+                    </div>
+                    <div class="login-form-container">
+                        <form class="login-form">                
+                            <div class="form-group email">
+                                <i class="material-icons icon">&#xE0BE;</i>
+                                <label class="sr-only" for="login-email">Email</label>
+                                <input id="login-email" name="login-email" type="email" class="form-control login-email" placeholder="Email">
+                            </div><!--//form-group-->
+                            <div class="form-group password">
+                                <i class="material-icons icon">&#xE897;</i>
+                                <label class="sr-only" for="login-password">Password</label>
+                                <input id="login-password" name="login-password" type="password" class="form-control login-password" placeholder="Password">
+                                <div class="extra">
+                                    <div class="checkbox remember">
+                                        <label>
+                                            <input type="checkbox"> Remember me
+                                        </label>
+                                    </div><!--//check-box-->
+                                    <div class="forgotten-password">
+                                        <a href="#" id="resetpass-link" data-toggle="modal" data-target="#resetpass-modal">Forgotten password?</a>
+                                    </div>
+                                </div><!--//extra-->
+                            </div><!--//form-group-->
+                            <button type="submit" class="btn btn-cta btn-block btn-primary">Log in</button>
+                        </form>
+                    </div><!--//login-form-container-->
+                    
+                    <div class="option-container">
+                        <div class="lead-text">Don't have an account?</div> 
+                        <a class="signup-link btn btn-ghost-alt" id="signup-link" href="#">Sign Up</a>                    
+                    </div><!--//option-container-->
+                </div><!--//modal-body-->
+                
+            </div><!--//modal-content-->
+        </div><!--//modal-dialog-->
+    </div><!--//modal-->
+    
+
+    <!-- Drip -->
+    <div class="container">
+    <div class="row">
+        <div class="modal fade" id="drip-science" role="dialog">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title">Download the Science Behind Brandish
+                            Insights</h4>
+                    </div>
+                    <div class="modal-body">
+                        <form action="https://www.getdrip.com/forms/10275729/submissions" method="post"
+                              data-drip-embedded-form="10275729" class="form-horizontal">
+                            <div data-drip-attribute="description"></div>
+                            <div class="form-group">
+                                <label class="control-label col-sm-3" for="fields[first_name]">First Name</label>
+
+                                <div class="col-sm-9">
+                                    <input class="input form-control" type="text" name="fields[first_name]" placeholder="First Name"
+                                           value="" required/>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label col-sm-3" for="fields[email]">Email Address</label>
+
+                                <div class="col-sm-9">
+                                    <input class="input form-control" type="email" name="fields[email]" placeholder="Email Address"
+                                           value="" required/>
+                                </div>
+                            </div>
+                            <div class="g-recaptcha" data-sitekey="6Lf7Oi4UAAAAAKlUxZJ3I7-928MQJzPL29SBathO"></div>
+
+                            <div class="form-group">
+                                <div class="col-sm-10 col-sm-offset-2">
+                                    <input class="btn btn-primary" data-drip-attribute="sign-up-button" type="Submit" value="Download"/>
+                                </div>
+                            </div>
+                        </form>
+                        </section>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+<div class="row">
+    <div class="modal fade" id="drip-early-access" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&#xD7;</button>
+                     <h4 class="modal-title">Request A Free Consultation</h4>
+                </div>
+                <div class="modal-body">
+                    <form action="https://www.getdrip.com/forms/31912202/submissions" method="post"
+                    data-drip-embedded-form="31912202">
+                        <div data-drip-attribute="description"></div>
+                        <div class="">
+                            <label for="drip-email">First Name</label>
+                            <br>
+                            <input type="text" class="form-control" id="drip-first-name" name="fields[first_name]"
+                            value="">
+                        </div>
+                        <div>
+                            <label for="drip-email">Email Address</label>
+                            <br>
+                            <input type="email" class="form-control" id="drip-email" name="fields[email]"
+                            value="">
+                        </div>
+                        <div>
+                            <input type="submit" value="Request A Free Consultation" class="btn btn-primary"
+                            data-drip-attribute="sign-up-button">
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+    <div class="row">
+        <div class="modal fade" id="drip-sign-up" role="dialog">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                            <h3 data-drip-attribute="headline">Sign up for updates</h3>
+                    </div>
+                    <div class="modal-body">
+                        <form action="https://www.getdrip.com/forms/69738966/submissions" method="post" data-drip-embedded-form="69738966">
+                            <div data-drip-attribute="description"></div>
+                            <div class="">
+                                <label for="drip-email">First Name</label><br/>
+                                <input type="text" class="form-control" id="drip-first-name2" name="fields[first_name]" value=""/>
+                            </div>
+                            <div>
+                                <label for="drip-email">Email Address</label><br/>
+                                <input type="email" class="form-control"  id="drip-email2" name="fields[email]" value=""/>
+                            </div>
+                            <div>
+                                <input type="submit" value="Sign Up Now" class="btn btn-primary" data-drip-attribute="sign-up-button" />
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="modal fade" id="drip-fact-sheet" role="dialog">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title">Download The Brandish Insights Fact Sheet</h4>
+                    </div>
+                    <div class="modal-body">
+                        <form action="https://www.getdrip.com/forms/10275729/submissions" method="post" data-drip-embedded-form="10275729">
+                            <div data-drip-attribute="description"></div>
+                            <div class="">
+                                <label for="drip-email">First Name</label><br/>
+                                <input type="text" class="form-control" id="drip-first-name3" name="fields[first_name]" value=""/>
+                            </div>
+                            <div>
+                                <label for="drip-email">Email Address</label><br/>
+                                <input type="email" class="form-control"  id="drip-email3" name="fields[email]" value=""/>
+                            </div>
+                            <div>
+                                <input type="submit" value="Download Now" class="btn btn-primary" data-drip-attribute="sign-up-button" />
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Drip -->
+    <!-- Signup Modal -->
+    <div class="modal modal-auth modal-signup" id="signup-modal" tabindex="-1" role="dialog" aria-labelledby="signupModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <h4 id="signupModalLabel" class="modal-title text-center">Sign up to start your 30 day free trial!</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="social-login text-center">                        
+                        <ul class="social-buttons list-unstyled">
+                            <li><a href="#" class="btn btn-social btn-google btn-block"><span class="icon-holder"><i class="fab fa-google" ></i></span><span class="btn-text">Sign up with Google</span></a></li>
+                            <li><a href="#" class="btn btn-social btn-facebook btn-block"><span class="icon-holder"><i class="fab fa-facebook-f" ></i></span><span class="btn-text">Sign up with Facebook</span></a></li>
+                        </ul>
+                    </div>
+                    <div class="divider">
+                        <span class="or-text">OR</span>
+                    </div>
+                    <div class="login-form-container">
+                        <form class="login-form">         
+                            <div class="form-group full-name">
+                                <i class="material-icons icon">&#xE7FD;</i>
+                                <label class="sr-only" for="signup-fullname">Your Full Name</label>
+                                <input id="signup-fullname" name="signup-fullname" type="text" class="form-control signup-email" placeholder="Your Full Name">
+                            </div><!--//form-group-->       
+                            <div class="form-group email">
+                                <i class="material-icons icon">&#xE0BE;</i>
+                                <label class="sr-only" for="signup-email">Your Email</label>
+                                <input id="signup-email" name="signup-email" type="email" class="form-control signup-email" placeholder="Your Email">
+                            </div><!--//form-group-->
+                            <div class="form-group password">
+                                <i class="material-icons icon">&#xE897;</i>
+                                <label class="sr-only" for="signup-password">Create a Password</label>
+                                <input id="signup-password" name="signup-password" type="password" class="form-control signup-password" placeholder="Create a Password">
+                            </div><!--//form-group-->
+                            <div class="legal-note">By signing up, you agree to our terms of services and privacy policy.</div>
+                            <button type="submit" class="btn btn-block btn-primary btn-cta">Sign up</button>
+                            
+                        </form>
+                    </div><!--//login-form-container-->
+                    <div class="option-container">
+                        <div class="lead-text">Already have an account?</div> 
+                        <a class="login-link btn btn-ghost-alt" id="login-link" href="#">Log in</a>                    
+                    </div><!--//option-container-->
+                </div><!--//modal-body-->
+            </div><!--//modal-content-->
+        </div><!--//modal-dialog-->
+    </div><!--//modal-->
+      
+    <!-- Javascript -->          
+    {# <script type="text/javascript" src="/assets/plugins/jquery-3.3.1.min.js"></script>
+    <script type="text/javascript" src="/assets/plugins/popper.min.js"></script> 
+    <script type="text/javascript" src="/assets/plugins/bootstrap/js/bootstrap.min.js"></script>  
+    <script type="text/javascript" src="/assets/plugins/back-to-top.js"></script>
+    <script type="text/javascript" src="/assets/plugins/jquery-scrollTo/jquery.scrollTo.min.js"></script>  
+    <script type="text/javascript" src="/assets/plugins/flexslider/jquery.flexslider-min.js"></script>     
+    <script type="text/javascript" src="/assets/js/main.js"></script>
+    <script type="text/javascript" src="/assets/js/theme.js"></script>
+    
+    <!--//Page Specific JS -->
+    <script type="text/javascript" src="/assets/js/home.js"></script> #}
+    
+
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="js/start.min.js"></script>
+    <script>
+      var wow = new WOW(
+        {
+          boxClass:     'start',
+          animateClass: 'design',
+          offset:       0, 
+          mobile:       true,
+          live:         true,
+          callback:     function(box) {
+          }
+        }
+      );
+      wow.init();
+    </script>
+
+
+    {% block scripts %} {% endblock %}
+            
+</body>
+</html> 
+

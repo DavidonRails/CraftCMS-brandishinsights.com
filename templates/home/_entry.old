@@ -1,0 +1,305 @@
+{% extends "_layouts/base" %}
+{% block shrink %}
+{% endblock %}
+{% block title %}
+    Brandish Insights: The World’s First Brand Analytics Tool
+{% endblock %}
+
+{% block content %}
+
+
+<!-- Hero Section
+================================================== -->
+<section id="intro" class="tp--intro tp--intro-dark tp--slider-single tp--owl-carousel-single owl-carousel owl-theme tp--intro-height-100" data-carousel-options='{ "items": "1", "mouseDrag": false, "touchDrag": false, "responsive": { "0": { "items":"1" } } }'>
+
+    <div class="item tp--intro-content-left text-sm-center tp--with-image" style="background: url('images/bg-intro-1.png');">
+
+        <div class="container">
+
+            <div class="row tp--col-sm-vertical-align tp--col-xs-vertical-align tp--vertical-align-intro">
+
+                <div class="col-sm-12 col-md-5">
+                    <div>
+                        <h2>The World’s First Brand Analytics Platform</h2>
+                        <p>Brandish Insights helps grow your brand by directly measuring how consumers really feel about you. It’s like Google Analytics for your brand.</p>
+                        <a class="btn btn-lg btn-primary popup-modal" href="" data-target="#drip-early-access" data-toggle="modal">Request A Free Consultation</a>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- About Section
+================================================== -->
+<section id="about" class="tp--section tp--features text-center">
+
+    <div class="page-header text-center">
+        <img src="/assets/images/shield.jpg" class="shield">
+        <h2>How it works</h2>
+    </div>
+
+    <div class="container">
+
+        <div class="row">
+            <div class="col-sm-4 tp--feature">
+                <div class="tp--icon-wrapper">
+                    <i class="tp--icon-gradient icon-layers icon-small"></i>
+                </div>
+                <h3>Step 1: Locate Your Consumers</h3>
+                <p>We access today's most popular consumer panels to find your current, past and future customers at scale.</p>
+            </div>
+            <div class="col-sm-4 tp--feature">
+                <div class="tp--icon-wrapper">
+                    <i class="tp--icon-gradient icon-screen-desktop icon-small"></i>
+                </div>
+                <h3>Step 2: Conduct Online Studies</h3>
+                <p>Once we've found them, consumers participate in market research studies about your brand that would make Don Draper proud.</p>
+            </div>
+            <div class="col-sm-4 tp--feature">
+                <div class="tp--icon-wrapper">
+                    <i class="tp--icon-gradient icon-drop icon-small"></i>
+                </div>
+                <h3>Step 3: Measure Your Brand</h3>
+                <p>You get a dashboard filled with powerful consumers insights around your brand's awareness, purchase intent, and much more.</p>
+            </div>
+        </div><!-- /.row -->
+    </div>
+
+</section>
+
+
+
+
+<!-- Featured Sections
+================================================== -->
+<section id="featured1" class="tp--section tp--featured tp--section-dark tp--gradient-20 tp--diagonal tp--diagonal-1 tp--padding-lg">
+
+    <div class="container">
+        <div class="row tp--col-sm-vertical-align">
+
+            <div class="col-md-5 text-center text-md-left">
+                <h2>New metrics mean new opportunities</h2>
+                <p>For the first time ever, digital marketers have access to branding metrics that will bridge the gap between a consumers' emotions and their pocketbooks.</p>
+            </div>
+
+            <div class="col-md-6 col-md-offset-1">
+                <img src="images/featured-img-2.png" class="img-responsive" alt="">
+            </div>
+
+        </div>
+    </div>
+
+</section>
+
+
+<!-- Featured Sections
+================================================== -->
+<section id="featured2" class="tp--section tp--featured tp--section-with-bg tp--section-with-bg p-top-md-200 p-bottom-md-200 tp--no-background-sm tp--no-background-xs" style="background-image: url('images/devices/device-macbook-2.png'); background-size: 65%; background-position: -200px center;">
+
+    <div class="container">
+        <div class="row tp--col-sm-vertical-align">
+
+            <div class="col-md-5 col-md-offset-6 text-center text-md-left">
+                <h2>Track your brand’s progress over time</h2>
+                <p>Dashboards track your brand’s progress over time and reveal how your marketing efforts are impacting things at a macro level.</p>
+                <a class="btn btn-primary" href="" role="button" data-target="#drip-early-access" data-toggle="modal">Sign up for early access</a>
+            </div>
+
+            <div class="col-sm-12 visible-sm visible-xs">
+                <img src="images/devices/device-macbook-2.png" class="img-responsive" alt="">
+            </div>
+
+        </div>
+    </div>
+
+</section>
+
+
+<!-- Featured Sections
+================================================== -->
+<section id="featured3" class="tp--section tp--section-with-bg-overlay tp--featured tp--parallax text-xs-center p-top-md-200 p-bottom-md-200" style="background-image: url('images/bg-featured-2.png');">
+
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-6 col-md-5">
+                <h3>Learn about our innovative approach</h3>
+                <p>We take decades-old market research methodologies and combine them with today's most accurate consumer surveying platforms to produce the world's first brand analytics platform.</p>
+                <a class="btn btn-primary btn-blue" href="" role="button" data-target="#drip-fact-sheet" data-toggle="modal">Download Our Fact Sheet</a>
+            </div>
+        </div>
+    </div>
+
+</section>
+
+
+
+<!-- Testimonials
+================================================== -->
+<section id="testimonials" class="tp--section tp--section-dark tp--gradient-20 tp--diagonal tp--diagonal-1 tp--testimonials tp--testimonials-2 text-center text-sm-left" style="display:none;">
+
+    <div class="page-header text-center">
+        <img src="/assets/images/shield.jpg" class="shield">
+        <h2>Testimonials</h2>
+    </div>
+
+    <div class="container">
+
+        <div class="row">
+
+            <!-- Testimonial -->
+
+            <div class="col-md-6">
+
+                <div class="tp--floating-box tp--hover-1">
+
+                    <div class="row tp--testimonial-header tp--col-sm-vertical-align">
+
+                        <div class="col-sm-3">
+                            <img class="img-circle img-responsive" src="images/user-avatar1.jpg">
+                        </div>
+
+                        <div class="col-sm-9 tp--padding-0">
+                            <h4>David Parrelli</h4>
+                            <p>Founder of <a href="https://healthcoach.io" target="_blank">HealthCoach</a></p>
+                        </div>
+
+                    </div>
+
+                    <div class="row">
+
+                        <div class="col-sm-12">
+
+                            <blockquote>
+                                <p>"Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit!"</p>
+                            </blockquote>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- Testimonial -->
+
+            <div class="col-md-6">
+
+                <div class="tp--floating-box tp--hover-1">
+
+                    <div class="row tp--testimonial-header tp--col-sm-vertical-align">
+
+                        <div class="col-sm-3">
+                            <img class="img-circle img-responsive" src="images/user-avatar2.jpg">
+                        </div>
+
+                        <div class="col-sm-9 tp--padding-0">
+                            <h4>Christian Bale</h4>
+                            <p>Actor</p>
+                        </div>
+
+                    </div>
+
+                    <div class="row">
+
+                        <div class="col-sm-12">
+
+                            <blockquote>
+                                <p>"Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit!"</p>
+                            </blockquote>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- Testimonial -->
+
+            <div class="col-md-6">
+
+                <div class="tp--floating-box tp--hover-1">
+
+                    <div class="row tp--testimonial-header tp--col-sm-vertical-align">
+
+                        <div class="col-sm-3">
+                            <img class="img-circle img-responsive" src="images/user-avatar3.jpg">
+                        </div>
+
+                        <div class="col-sm-9 tp--padding-0">
+                            <h4>Sandra Hayes</h4>
+                            <p>CEO at VR Tech</p>
+                        </div>
+
+                    </div>
+
+                    <div class="row">
+
+                        <div class="col-sm-12">
+
+                            <blockquote>
+                                <p>"Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit!"</p>
+                            </blockquote>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- Testimonial -->
+
+            <div class="col-md-6">
+
+                <div class="tp--floating-box tp--hover-1">
+
+                    <div class="row tp--testimonial-header tp--col-sm-vertical-align">
+
+                        <div class="col-sm-3">
+                            <img class="img-circle img-responsive" src="images/user-avatar4.jpg">
+                        </div>
+
+                        <div class="col-sm-9 tp--padding-0">
+                            <h4>Samuel Johnston</h4>
+                            <p>Manager at Swirly Inc.</p>
+                        </div>
+
+                    </div>
+
+                    <div class="row">
+
+                        <div class="col-sm-12">
+
+                            <blockquote>
+                                <p>"Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit!"</p>
+                            </blockquote>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+{% endblock %}

@@ -1,0 +1,11 @@
+{% if block.heading |length %}
+<h3 class="blog">
+    <span class="blog-headline-link">
+        <a id="{{ block.heading |kebab }}" href="#{{ block.heading |kebab }}"></a>
+    </span>
+    {{ block.heading  }}
+</h3>
+{% endif %}
+<span class="p">
+    {{ block.text  }}
+</span>

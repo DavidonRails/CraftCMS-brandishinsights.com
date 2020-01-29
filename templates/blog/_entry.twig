@@ -1,0 +1,292 @@
+{% extends "_layouts/base" %} 
+{% block shrink %} 
+    shrink shrink2 
+{% endblock %} 
+{% block title %} 
+{{ entry.title }} | Brandish Insights 
+{% endblock %} 
+
+{% block schema %}
+{% set image = entry.featuredImage.one() %}
+        {% if image %}
+            {% set imageurl = 'https:' ~ image.url %}
+        {% else %}
+            {% set imageurl = 'none' %}
+        {% endif %}
+        <meta property="og:type" content="article">
+        <meta property="og:title" content="{{ entry.title }}">
+        <meta property="og:site_name" content="https://www.brandishinsights.com">
+        <meta property="og:description" content="{{ entry.blogEntryDescription }}">
+        <meta property="og:image" content="{{ imageurl }}">
+        <meta property="og:url" content="{{ entry.getUrl() }}">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "NewsArticle",
+  "image": [
+    "{{ imageurl }}"
+  ],
+  "datePublished": "{{ entry.postDate | date('Y-m-d') }}",
+  "dateModified": "{{ entry.dateUpdated | date('Y-m-d') }}",
+  "headline": "{{ entry.title }}",
+  "publisher": {
+      "@type": "Organization",
+      "name": "Brandish Insights",
+      "logo": {
+          "@type": "ImageObject",
+          "url": "https://www.brandishinsights.com/assets/images/logo-light.png"
+      }
+  },
+  "description": "{{ entry.blogEntryDescription }}",
+  "author": {
+      "@type": "Person",
+      "name": "Josh Braaten"
+  },
+  "mainEntityOfPage": "{{ entry.getUrl() }}"
+
+}
+</script>
+{% endblock %}
+
+{% block content %}
+<div class="scroll-line"></div>
+<div class="blog-single-page">
+    <section class="heading-section section section-on-bg">
+        <div class="hero-wrapper">
+            <div class="hero-holder"></div>
+            <div class="hero-mask-solid"></div>
+        </div>
+        <!--//hero-wrapper-->
+        <div class="container heading-content">
+            <div class="back-to-main">
+                <a href="/blog">
+                    <i class="fas fa-long-arrow-alt-left" aria-hidden="true"></i> Blog Home</a>
+            </div>
+            <!--//back-to-main-->
+            <h2 class="headline tw-text-5xl">{{ entry.title }}</h2>
+            <div class="intro">{{ entry.blogEntryDescription }}</div>
+            <div class="meta">
+                <div class="author tw-inline-block">
+                    <!--<img class="author-profile tw-rounded-full" src="/assets/images/josh-braaten.jpg" alt="">-->
+                    <div class="author-name">By
+                        <a href="http://twitter.com/{{ entry.authorTwitterHandle }}" target="_New">Josh Braaten</a>
+                    </div>
+                </div>
+                <!--//author-->
+                <div class="time-stamp">
+                    {{ entry.postDate|date("m/d/Y") }}
+                </div>
+                <!--//time-stamp-->
+
+            </div>
+            <!--//meta-->
+        </div>
+        <!--//container-->
+    </section>
+    <!--//heading-section-->
+
+    <div class="post-single-block" id="post-single-block">
+        <ul class="soc">
+            <li>
+                <a href="#" onClick="window.open('https://www.facebook.com/sharer/sharer.php?u={{ entry.getUrl() }}','share','resizable,height=360,width=470'); return false;"
+                    class="icon icon-10 facebook bounceIn" title="Facebook">
+                    <svg viewBox="0 0 512 512">
+                        <path d="M211.9 197.4h-36.7v59.9h36.7V433.1h70.5V256.5h49.2l5.2-59.1h-54.4c0 0 0-22.1 0-33.7 0-13.9 2.8-19.5 16.3-19.5
+ 10.9 0 38.2 0 38.2 0V82.9c0 0-40.2 0-48.8 0 -52.5 0-76.1 23.1-76.1 67.3C211.9 188.8 211.9 197.4 211.9 197.4z" />
+                    </svg>
+                </a>
+            </li>
+            <li>
+                <a href="#" onClick="window.open('https://twitter.com/home?status={{ entry.title|url_encode }}%20{{ entry.getUrl() }}','share','resizable,height=360,width=470'); return false;"
+                    class="icon icon-26 twitter" title="Twitter">
+                    <svg viewBox="0 0 512 512">
+                        <path d="M419.6 168.6c-11.7 5.2-24.2 8.7-37.4 10.2 13.4-8.1 23.8-20.8 28.6-36 -12.6 7.5-26.5 12.9-41.3 15.8 -11.9-12.6-28.8-20.6-47.5-20.6
+ -42 0-72.9 39.2-63.4 79.9 -54.1-2.7-102.1-28.6-134.2-68 -17 29.2-8.8 67.5 20.1 86.9 -10.7-0.3-20.7-3.3-29.5-8.1 -0.7 30.2 20.9 58.4 52.2 64.6 -9.2 2.5-19.2 3.1-29.4 1.1 8.3 25.9 32.3 44.7 60.8 45.2 -27.4 21.4-61.8 31-96.4 27 28.8 18.5 63 29.2 99.8 29.2 120.8
+ 0 189.1-102.1 185-193.6C399.9 193.1 410.9 181.7 419.6 168.6z" />
+                    </svg>
+                </a>
+            </li>
+            <li>
+                <a href="https://www.linkedin.com/shareArticle?mini=true&url={{ entry.getUrl() }}&title={{ entry.title }}" target="_New"
+                    class="icon icon-17 linkedin" title="LinkedIn">
+                    <svg viewBox="0 0 512 512">
+                        <path d="M186.4 142.4c0 19-15.3 34.5-34.2 34.5 -18.9 0-34.2-15.4-34.2-34.5 0-19 15.3-34.5 34.2-34.5C171.1 107.9 186.4
+ 123.4 186.4 142.4zM181.4 201.3h-57.8V388.1h57.8V201.3zM273.8 201.3h-55.4V388.1h55.4c0 0 0-69.3 0-98 0-26.3 12.1-41.9 35.2-41.9 21.3 0 31.5 15 31.5 41.9 0 26.9 0 98 0 98h57.5c0 0 0-68.2 0-118.3 0-50-28.3-74.2-68-74.2 -39.6 0-56.3 30.9-56.3 30.9v-25.2H273.8z"
+                        />
+                    </svg>
+                </a>
+            </li>
+            <li>
+                <a href="mailto:?subject=Brandish Insights: {{ entry.title }}&body={{ entry.getUrl() }}" class="icon icon-8 email" title="Email">
+                    <svg viewBox="0 0 512 512">
+                        <path d="M101.3 141.6v228.9h0.3 308.4 0.8V141.6H101.3zM375.7 167.8l-119.7 91.5 -119.6-91.5H375.7zM127.6 194.1l64.1
+ 49.1 -64.1 64.1V194.1zM127.8 344.2l84.9-84.9 43.2 33.1 43-32.9 84.7 84.7L127.8 344.2 127.8 344.2zM384.4 307.8l-64.4-64.4 64.4-49.3V307.8z"
+                        />
+                    </svg>
+                </a>
+            </li>
+        </ul>
+
+        <div class="post-container">
+              {% set lazyImage = false %} 
+              {% set blocks = entry.contentBuilder.all() %} 
+              {% for block in blocks %} 
+                {% include ('blog/_partials/_block_' ~ block.type.handle) %} 
+                {% if block.type.handle == "image" %} 
+                    {% set lazyImage = false %} 
+                {% endif %} 
+            {% endfor %}
+        </div>
+
+        <!--//post-container-->
+        <div class="author-container">
+            <div class="author row">
+                <img class="author-profile tw-rounded-full" src="/assets/images/josh-braaten.jpg" alt="">
+                <h5 class="author-name tw-text-center tw-sm:text-left tw-pt-4">Author: Josh Braaten<P>CEO - <a href="https://brandishinsights.com">Brandish Insights</a></h5>
+            </div>
+            <!--//author-->
+            <div class="">
+                <ul class="social list-inline tw-flex tw-justify-center tw-w-full">
+                    <li class="list-inline-item tw-p-4">
+                        <a href="https://twitter.com/jlbraaten" target="_New">
+                            <i class="fab fa-twitter" aria-hidden="true"></i>
+                        </a>
+                    </li>
+                    <li class="list-inline-item tw-p-4">
+                        <a href="https://www.linkedin.com/in/jlbraaten/" target="_New">
+                            <i class="fab fa-linkedin-in" aria-hidden="true"></i>
+                        </a>
+                    </li>
+                    <li class="list-inline-item tw-p-4">
+                        <a href="https://www.youtube.com/channel/UCF1_oY9d2yJ1NlcJf2YBHDg" target="_New">
+                            <i class="fab fa-youtube" aria-hidden="true"></i>
+                        </a>
+                    </li>
+                    <li class="list-inline-item tw-p-4">
+                        <a href="https://facebook.com/brandishinsights" target="_New">
+                            <i class="fab fa-facebook-f" aria-hidden="true"></i>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <!--//intro-->
+
+        </div>
+        <!--//author-container-->
+
+    </div>
+    <!--//post-single-block-->
+</div>
+
+<div class="container">
+    <div class="col-xs-12">
+        <div id="disqus_thread"></div>
+<script>
+
+/**
+*  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+*  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+/*
+var disqus_config = function () {
+this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+};
+*/
+(function() { // DON'T EDIT BELOW THIS LINE
+var d = document, s = d.createElement('script');
+s.src = 'https://brandish-insights.disqus.com/embed.js';
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
+</div>
+
+<div class="scroll-line"></div>
+{% set relatedArticles = entry.relatedArticles %}
+{% set idsToExclude = ['and'] %} 
+<div class="related-posts text-center">
+    <div class="container">
+            <h3 class="title">You May Also Like:</h3>
+            <div class="row">
+                {% for related in relatedArticles %}
+                    <div class="item col-12 col-md-4 tw-flex">
+                        <div class="inner">
+                                {% set image = related.featuredImage.one() %}
+                                {% if image %}
+                                {% set transformedImage = craft.imager.transformImage(image,
+                                        { width: 350, webpImagickOptions: { lossless: 'true', method: '1' } }
+                                    ) %}
+                            <div class="figure-holder">
+                                <a href="{{ related.url }}"><img class="img-fluid" src="{{ transformedImage.url }}" alt=""></a>
+                            </div>
+                            {% endif %}
+                            <div class="content">
+                                <h3 class="title"><a href="{{ related.url }}">{{ related.title }}</a></h3>
+                                <div class="intro">
+                                    {{ related.blogEntryDescription }}
+                                </div><!--//intro-->
+                            </div><!--//content-->
+                        </div><!--//inner-->
+                    </div><!--//item-->
+                    {% set idsToExclude = idsToExclude|merge([related.id]) %}  
+                {% endfor %}
+                {% set idsToExclude = idsToExclude|merge([entry.id]) %} 
+                {% set idsToExcludeString = idsToExclude|join(', not ') %}
+                {% set relatedLimit = 3 - relatedArticles | length %}
+                {% if relatedArticles | length < 3 %}
+                    {% set relatedEntries = craft.entries.relatedTo(entry.blogCategory).id(idsToExcludeString).limit(relatedLimit) %}
+                    {% for related in relatedEntries %}
+                        <div class="item col-12 col-md-4 tw-flex">
+                            <div class="inner">
+                                    {% set image = related.featuredImage.one() %}
+                                    {% if image %}
+                                    {% set transformedImage = craft.imager.transformImage(image,
+                                        { width: 350, webpImagickOptions: { lossless: 'true', method: '1' } }
+                                    ) %}
+                                <div class="figure-holder">
+                                    <a href="{{ related.url }}"><img class="img-fluid" src="{{ transformedImage.url }}" alt=""></a>
+                                </div>
+                                {% endif %}
+                                <div class="content">
+                                    <h3 class="title"><a href="{{ related.url }}">{{ related.title }}</a></h3>
+                                    <div class="intro">
+                                        {{ related.blogEntryDescription }}
+                                    </div><!--//intro-->
+                                </div><!--//content-->
+                            </div><!--//inner-->
+                        </div><!--//item-->
+                    {% endfor %}
+                {% endif %}
+            </div><!--//row-->
+    </div><!--//container-->
+</div>
+{% endblock %} 
+{% block scripts %}
+<script src="/assets/js/focuspoint.js"></script>
+<script>
+    (function () {
+
+        function Scrollify() {
+
+            var line = document.querySelector(".scroll-line"),
+                scrollpos = window.pageYOffset,
+                docheight2 = document.body.clientHeight,
+                docheight = $('#disqus_thread').offset().top,
+                winheight = window.outerHeight,
+                scrolled = (scrollpos / (docheight - winheight)) * 100;
+
+            line.style.width = (scrolled + '%');
+        }
+
+        window.addEventListener("scroll", Scrollify);
+        {% set image = entry.featuredImage.one() %}
+        {% if image %}
+        
+        var featuredImage = '{{ image.url }}';
+        $('.blog-single-page .hero-holder').css('background-image', 'url('+featuredImage+')');
+        {% endif %}
+    })();
+</script>
+{% endblock %}

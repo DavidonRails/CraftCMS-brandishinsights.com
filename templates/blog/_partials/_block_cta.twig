@@ -1,0 +1,19 @@
+{% set image = block.ctaImage.one() %}
+<div class="tw-bg-grey-light tw-flex cta text-center tw-rounded">
+    {% if image %}
+        <div class="cta-image tw-p-4 tw-hidden tw-sm:block">
+            <img src="{{ image.url }}" class="pull-left">
+        </div>
+    {% endif %}
+    <div class="tw-p-4 tw-w-full">
+        {% if block.ctaHeadline | length %}
+            <h3 class="">
+                {{ block.ctaHeadline  }}
+            </h3>
+        {% endif %}
+        {% if block.ctaDescription | length %}
+            <p class="tw-mb-6">{{ block.ctaDescription  }}<p>
+        {% endif %}
+        {{ block.ctaJavascript|raw  }}
+    </div>
+</div>

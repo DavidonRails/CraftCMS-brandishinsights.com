@@ -1,0 +1,312 @@
+// --- Insert your custom CSS here --->
+
+
+$gray-base:			#000 !default;
+$gray-darker:		lighten($gray-base, 13.5%) !default; // #222
+$gray-dark:			lighten($gray-base, 20%) !default;   // #333
+$gray:				lighten($gray-base, 33.5%) !default; // #555
+$gray-light:		lighten($gray-base, 46.7%) !default; // #777
+$gray-lighter:		lighten($gray-base, 93.5%) !default; // #eee
+
+
+
+$dark-blue:   #1A2634;
+$blue:        #203E5F;
+$dark-yellow: #EEC550;
+$light-yellow: lighten($dark-yellow, 30%) !default;
+$lighter-yellow: lighten($dark-yellow, 10%) !default;
+$yellow:      #F9E3A3;
+$black:       #121212;
+
+$theme-primary:    $dark-yellow;
+$theme-danger:     #e74c3c;
+
+@import url("https://fonts.googleapis.com/css?family=PT+Sans:400,700,400italic,700italic");
+@import url("https://fonts.googleapis.com/css?family=Tenor+Sans");
+@import url("https://fonts.googleapis.com/css?family=Archivo+Black");
+
+@import "custom/social-share";
+
+
+.btn-primary {
+  background-color: $dark-yellow !important;
+  border-color: $dark-yellow !important;
+}
+
+.btn-primary:hover {
+  background-color: $lighter-yellow !important;
+  border-color: $lighter-yellow !important;
+}
+
+.btn-blue {
+  background-color: $dark-blue !important;
+  border-color: $dark-blue !important;
+}
+
+.btn-blue:hover {
+  background-color: $dark-blue !important;
+  border-color: $dark-blue !important;
+}
+
+header {
+  a {
+    font-family: "Tenor Sans";
+    text-transform: uppercase;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+  }
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Archivo Black", "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+body {
+  font-family: "Tenor Sans";
+  .blog-row {
+    font-size: 21px;
+    color: #212121 !important;
+  }
+}
+
+.tp--gradient-20.tp--section.tp--diagonal:before {
+  background: #203E5F !important;
+  background: -webkit-linear-gradient(right, #203E5F, #1A2634) !important;
+  background: linear-gradient(to left, #203E5F, #1A2634) !important;
+}
+
+.tp--icon-gradient {
+  color: $blue;
+  background: -webkit-gradient(linear, left top, left bottom, from($dark-blue), to($blue));
+  -webkit-background-clip: text;
+}
+
+.shield {
+  max-width: 60px;
+}
+
+.tp--preloader .tp--spinner .loader-inner div {
+  background-color: $dark-blue;
+}
+
+#drip-early-access, #drip-fact-sheet {
+  .btn {
+    margin-top: 10px;
+  }
+}
+
+section {
+  &.padding-top {
+    padding-top: 100px;
+  }
+}
+
+#blog {
+
+  h1 {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 20px;
+    font-size: 50px;
+    font-family: "Archivo Black";
+    color: $blue;
+    line-height: 1.1;
+  }
+
+  h2 {
+    font-size: 45px;
+    font-family: "Archivo Black";
+    color: $blue;
+  }
+
+  h3 {
+    font-size: 35px;
+    font-family: "Archivo Black";
+    color: $dark-yellow;
+    line-height: 1;
+  }
+
+  .center {
+    text-align: center;
+    margin: auto;
+  }
+}
+
+.cta-image {
+  img {
+    max-width: 100%;
+  }
+}
+
+.cta {
+  background-color: $blue;
+  padding: 20px;
+  color: white;
+  margin-bottom: 20px;
+}
+
+.author {
+  height: 50px;
+  padding-top: 15px;
+}
+
+.cta-section {
+  font-size: 21px;
+  border-radius: 4px;
+
+
+  button {
+    max-width:100%;
+    white-space: normal;
+    text-transform: uppercase;
+    font-size: 21px;
+  }
+
+  .col-xs-12 {
+    padding-bottom: 15px;
+  }
+
+  h3 {
+    margin-bottom: 10px;
+  }
+
+  .btn {
+    font-size: 19px;
+  }
+}
+
+.blog-section {
+  margin-bottom: 30px;
+}
+
+img {
+  max-width: 100%;
+}
+
+a,
+a:hover,
+a:focus,
+a:active,
+a.active {
+  outline: none;
+}
+
+a {
+  color: $dark-yellow;
+}
+
+@media only screen and (max-width: 425px) {
+  #blog {
+
+    h1 {
+      text-align: center;
+      margin-left: auto;
+      margin-right: auto;
+      margin-bottom: 20px;
+      font-size: 35px;
+      font-family: "Archivo Black";
+      color: $blue;
+    }
+
+    h2 {
+      font-size: 25px;
+      font-family: "Archivo Black";
+      color: $blue;
+    }
+
+    h3 {
+      font-size: 20px;
+      font-family: "Archivo Black";
+      color: $dark-yellow;
+    }
+
+    .center {
+      text-align: center;
+      margin: auto;
+    }
+  }
+}
+
+figure {
+  img {
+    margin-bottom: 30px;
+    margin-top: 30px;
+  }
+}
+
+blockquote {
+    display: block;
+    background: #fff;
+    padding: 15px 20px 15px 45px;
+    margin: 0 0 20px;
+    position: relative;
+    border-left: 15px solid #EEC550;
+    border-right: 2px solid #EEC550;
+    -moz-box-shadow: 2px 2px 15px #ccc;
+    -webkit-box-shadow: 2px 2px 15px #ccc;
+    box-shadow: 2px 2px 15px #ccc;
+    font-size: 19px;
+    font-style: italic;
+}
+
+.image-cropper {
+  width: 100px;
+  height: 100px;
+  position: relative;
+  overflow: hidden;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+  border-radius: 50%;
+  float: left;
+  margin-bottom: 20px;
+
+  img {
+    display: inline;
+    margin: 0 auto;
+    height: 100%;
+    width: auto;
+  }
+}
+
+
+.hero {
+  background-image: url('/assets/images/city-blue.png');
+  background-size: cover;
+  background-position: center;
+  width: 100wh;
+  height: 500px;
+  display: flex;
+
+.center-content {
+  width: 600px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: auto;
+  justify-content: center;
+  padding-top: 100px;
+  height: 500px;
+  
+  & h1, h3 {
+    color: white;
+    line-height: 1;
+  }
+
+  & h1 {
+    text-transform: uppercase;
+    font-size: 3em;
+    margin-bottom: 0;
+    text-align: center;
+    margin-top: 50px;
+  } 
+
+  & h3 {
+    margin-bottom: 40px;
+    font-size: 1.5em;
+    font-weight: normal;
+  }
+}
+}

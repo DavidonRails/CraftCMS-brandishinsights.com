@@ -1,0 +1,184 @@
+{% extends "_layouts/base" %}
+{% block shrink %}
+    shrink shrink2
+{% endblock %}
+{% block title %}
+    Brandish Insights: Blog
+{% endblock %}
+
+{% block content %}
+<section class="heading-section section section-on-bg blog-page">
+        <div class="hero-wrapper">
+            <div class="hero-holder"></div>
+            <div class="hero-mask-solid"></div>
+        </div><!--//hero-wrapper--> 
+        <div class="container heading-content">                
+            <h2 class="headline">Marketing is Broken...</h2>
+            <div class="intro">And how to fix it according to Brandish Insights.</div>
+        </div><!--//container-->
+    </section><!--//heading-section-->
+   
+    <div class="posts-block text-center" id="posts-block">
+        <div class="container">
+            <h2 class="block-heading text-center">Latest Stories</h2>
+            <!-- Nav tabs -->
+            <ul class="nav justify-content-center">
+                <li class="nav-item"><a class="nav-link active" href="#tab-1" aria-controls="tab-1" role="tab" data-toggle="tab">Latest</a></li>
+                <li class="nav-item"><a class="nav-link" href="#tab-2" aria-controls="tab-2" role="tab" data-toggle="tab">Branding & Advertising</a></li>
+                <li class="nav-item"><a class="nav-link" href="#tab-3" aria-controls="tab-3" role="tab" data-toggle="tab">Market Research</a></li>
+                <li class="nav-item"><a class="nav-link" href="#tab-4" aria-controls="tab-4" role="tab" data-toggle="tab">Analytics & Metrics</a></li>
+                <li class="nav-item"><a class="nav-link" href="#tab-5" aria-controls="tab-5" role="tab" data-toggle="tab">Brand Measurment</a></li>
+            </ul><!--//nav-tabs-->
+            
+            <!-- Tab panes -->
+            <div class="tab-content">
+                <div role="tabpanel" class="nav-item tab-pane tab-pane-1 active" id="tab-1">
+                    {% set entries = craft.entries.section('blog').all() %}
+                    {% for entry in entries %}
+                    <div class="post">
+                        <h3 class="post-title"><a href="/blog/{{ entry.slug }}">{{ entry.title }}</a></h3>
+                        <div class="post-content">
+                            <div class="meta">
+                                <div class="author">
+                                    <img class="author-profile" src="/assets/images/josh-braaten.png" alt="">
+                                    <div class="author-name">Josh Braaten</div>
+                                </div><!--//author-->
+                                <div class="time-stamp">
+                                    {{ entry.postDate|date('M d, Y') }}
+                                </div><!--//time-stamp-->
+                            </div><!--//meta-->
+                            {% set image = entry.featuredImage.one() %}
+                            <div class="post-thumb">
+                            {% if image %}
+                                <a href="/blog/{{ entry.slug }}"><img class="img-fluid" src="{{ image.url }}" alt=""></a>
+                            {% endif %}    
+                            </div>
+                            <div class="post-intro">
+                                {{ entry.blogEntryDescription }}
+                            </div><!--//post-intro-->
+                        </div><!--//post-content-->
+                    </div><!--//post-->
+                    {% endfor %}  
+                </div><!--//tab-pane-1-->
+                
+                <div role="tabpanel" class="tab-pane tab-pane-2" id="tab-2">
+                    {% for entry in craft.entries.relatedTo(craft.categories.slug('branding-advertising')).all() %}
+                        <div class="post">
+                        <h3 class="post-title"><a href="/blog/{{ entry.slug }}">{{ entry.title }}</a></h3>
+                        <div class="post-content">
+                            <div class="meta">
+                                <div class="author">
+                                    <img class="author-profile" src="/assets/images/josh-braaten.png" alt="">
+                                    <div class="author-name">Josh Braaten</div>
+                                </div><!--//author-->
+                                <div class="time-stamp">
+                                    {{ entry.postDate|date('M d, Y') }}
+                                </div><!--//time-stamp-->
+                            </div><!--//meta-->
+                            {% set image = entry.featuredImage.one() %}
+                            <div class="post-thumb">
+                            {% if image %}
+                                <a href="/blog/{{ entry.slug }}"><img class="img-fluid" src="{{ image.url }}" alt=""></a>
+                            {% endif %}    
+                            </div>
+                            <div class="post-intro">
+                                {{ entry.blogEntryDescription }}
+                            </div><!--//post-intro-->
+                        </div><!--//post-content-->
+                    </div><!--//post-->
+                    {% endfor %}
+                </div><!--//tab-pane-2-->
+                
+                <div role="tabpanel" class="tab-pane tab-pane-3" id="tab-3">
+                    {% for entry in craft.entries.relatedTo(craft.categories.slug('market-research')).all() %}
+                        <div class="post">
+                        <h3 class="post-title"><a href="/blog/{{ entry.slug }}">{{ entry.title }}</a></h3>
+                        <div class="post-content">
+                            <div class="meta">
+                                <div class="author">
+                                    <img class="author-profile" src="/assets/images/josh-braaten.png" alt="">
+                                    <div class="author-name">Josh Braaten</div>
+                                </div><!--//author-->
+                                <div class="time-stamp">
+                                    {{ entry.postDate|date('M d, Y') }}
+                                </div><!--//time-stamp-->
+                            </div><!--//meta-->
+                            {% set image = entry.featuredImage.one() %}
+                            <div class="post-thumb">
+                            {% if image %}
+                                <a href="/blog/{{ entry.slug }}"><img class="img-fluid" src="{{ image.url }}" alt=""></a>
+                            {% endif %}    
+                            </div>
+                            <div class="post-intro">
+                                {{ entry.blogEntryDescription }}
+                            </div><!--//post-intro-->
+                        </div><!--//post-content-->
+                    </div><!--//post-->
+                    {% endfor %}
+                </div><!--//tab-pane-3-->
+                
+                <div role="tabpanel" class="tab-pane tab-pane-4" id="tab-4">
+                    {% for entry in craft.entries.relatedTo(craft.categories.slug('analytics-metrics')).all() %}
+                        <div class="post">
+                        <h3 class="post-title"><a href="/blog/{{ entry.slug }}">{{ entry.title }}</a></h3>
+                        <div class="post-content">
+                            <div class="meta">
+                                <div class="author">
+                                    <img class="author-profile" src="/assets/images/josh-braaten.png" alt="">
+                                    <div class="author-name">Josh Braaten</div>
+                                </div><!--//author-->
+                                <div class="time-stamp">
+                                    {{ entry.postDate|date('M d, Y') }}
+                                </div><!--//time-stamp-->
+                            </div><!--//meta-->
+                            {% set image = entry.featuredImage.one() %}
+                            <div class="post-thumb">
+                            {% if image %}
+                                <a href="/blog/{{ entry.slug }}"><img class="img-fluid" src="{{ image.url }}" alt=""></a>
+                            {% endif %}    
+                            </div>
+                            <div class="post-intro">
+                                {{ entry.blogEntryDescription }}
+                            </div><!--//post-intro-->
+                        </div><!--//post-content-->
+                    </div><!--//post-->
+                    {% endfor %}
+                </div><!--//tab-pane-4-->
+
+                <div role="tabpanel" class="tab-pane tab-pane-5" id="tab-5">
+                    {% for entry in craft.entries.relatedTo(craft.categories.slug('brand-measurement')).all() %}
+                        <div class="post">
+                        <h3 class="post-title"><a href="/blog/{{ entry.slug }}">{{ entry.title }}</a></h3>
+                        <div class="post-content">
+                            <div class="meta">
+                                <div class="author">
+                                    <img class="author-profile" src="/assets/images/josh-braaten.png" alt="">
+                                    <div class="author-name">Josh Braaten</div>
+                                </div><!--//author-->
+                                <div class="time-stamp">
+                                    {{ entry.postDate|date('M d, Y') }}
+                                </div><!--//time-stamp-->
+                            </div><!--//meta-->
+                            {% set image = entry.featuredImage.one() %}
+                            <div class="post-thumb">
+                            {% if image %}
+                                <a href="/blog/{{ entry.slug }}"><img class="img-fluid" src="{{ image.url }}" alt=""></a>
+                            {% endif %}    
+                            </div>
+                            <div class="post-intro">
+                                {{ entry.blogEntryDescription }}
+                            </div><!--//post-intro-->
+                        </div><!--//post-content-->
+                    </div><!--//post-->
+                    {% endfor %}
+                </div><!--//tab-pane-4-->
+                
+            </div><!--//tab-content-->
+        </div><!--//container-->
+    </div><!--//posts-block-->
+{% endblock %}
+
+{% block scripts %}
+
+{% endblock %}
+

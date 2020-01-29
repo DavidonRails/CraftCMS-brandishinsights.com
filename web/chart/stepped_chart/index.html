@@ -1,0 +1,107 @@
+<html><head>
+	<title>Stepped Line Chart</title>
+	<script async="" src="analytics.js"></script>
+	<script src="Chart.min.js"></script>
+	<script src="utils.js"></script>
+	<style>
+	canvas {
+		-moz-user-select: none;
+		-webkit-user-select: none;
+		-ms-user-select: none;
+	}
+	.chart-container {
+		width: 500px;
+		margin-left: 40px;
+		margin-right: 40px;
+		margin-bottom: 40px;
+	}
+	.container {
+		display: flex;
+		flex-direction: row;
+		flex-wrap: wrap;
+		justify-content: center;
+	}
+	</style>
+<style type="text/css">/* Chart.js */
+@keyframes chartjs-render-animation{from{opacity:.99}to{opacity:1}}.chartjs-render-monitor{animation:chartjs-render-animation 1ms}.chartjs-size-monitor,.chartjs-size-monitor-expand,.chartjs-size-monitor-shrink{position:absolute;direction:ltr;left:0;top:0;right:0;bottom:0;overflow:hidden;pointer-events:none;visibility:hidden;z-index:-1}.chartjs-size-monitor-expand>div{position:absolute;width:1000000px;height:1000000px;left:0;top:0}.chartjs-size-monitor-shrink>div{position:absolute;width:200%;height:200%;left:0;top:0}</style></head>
+
+<body>
+	<div class="container">
+	</div>
+	<script>
+		function createConfig(details, data) {
+			return {
+				type: 'line',
+				data: {
+					labels: ['Day 1', 'Day 2', 'Day 3', 'Day 4', 'Day 5', 'Day 6'],
+					datasets: [{
+						label: 'steppedLine: ' + details.steppedLine,
+						steppedLine: details.steppedLine,
+						data: data,
+						borderColor: details.color,
+						fill: false,
+					}]
+				},
+				options: {
+					responsive: true,
+					title: {
+						display: true,
+						text: details.label,
+					}
+				}
+			};
+		}
+
+
+		window.onload = function() {
+			var container = document.querySelector('.container');
+
+			var data = [
+				randomScalingFactor(),
+				randomScalingFactor(),
+				randomScalingFactor(),
+				randomScalingFactor(),
+				randomScalingFactor(),
+				randomScalingFactor()
+			];
+
+			var steppedLineSettings = [{
+				steppedLine: false,
+				label: 'No Step Interpolation',
+				color: window.chartColors.red
+			}, {
+				steppedLine: true,
+				label: 'Step Before Interpolation',
+				color: window.chartColors.green
+			}, {
+				steppedLine: 'before',
+				label: 'Step Before Interpolation',
+				color: window.chartColors.green
+			}, {
+				steppedLine: 'after',
+				label: 'Step After Interpolation',
+				color: window.chartColors.purple
+			}, {
+				steppedLine: 'middle',
+				label: 'Step Middle Interpolation',
+				color: window.chartColors.blue
+			}];
+
+			steppedLineSettings.forEach(function(details) {
+				var div = document.createElement('div');
+				div.classList.add('chart-container');
+
+				var canvas = document.createElement('canvas');
+				div.appendChild(canvas);
+				container.appendChild(div);
+
+				var ctx = canvas.getContext('2d');
+				var config = createConfig(details, data);
+				new Chart(ctx, config);
+			});
+		};
+	</script>
+
+
+
+</body></html>

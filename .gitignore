@@ -1,0 +1,9 @@
+/.env
+/.idea
+/vendor
+.DS_Store
+/public
+/node_modules
+/web/imager
+/web/assets/images/Blue Stars LLC_files
+/web/assets/images-before-compression

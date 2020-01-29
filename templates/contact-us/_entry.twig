@@ -1,0 +1,57 @@
+{% extends "_layouts/base" %} 
+{% block shrink %} 
+    shrink shrink2 
+{% endblock %} 
+{% block title %} 
+Contact us | Brandish Insights 
+{% endblock %} 
+
+
+{% block content %}
+<section class="heading-section section section-on-bg contact">
+        <div class="hero-wrapper contact-page">
+            <div class="hero-holder"></div>
+            <div class="hero-mask-solid"></div>
+        </div><!--//hero-wrapper--> 
+        <div class="container heading-content">             
+            <h2 class="headline">Get in Touch</h2>
+            <div class="meta">We’d love to hear from you. <br class="d-none d-md-block">Feel free to send us a message below and we will get back in touch with you. </div>
+        </div><!--//container-->
+    </section>
+<div class="scroll-line"></div>
+<div class="contact-us-single-page">
+    <div class="form-block">
+        <form action="https://www.getdrip.com/forms/31912202/submissions" method="post" data-drip-embedded-form="31912202" class="contact-form">
+            <h3 class="form-title text-center">Contact Us</h3>                 
+            <div class="row">                                                           
+                <div class="form-group col-12 col-md-6">
+                    <label class="sr-only" for="cname">Name</label>
+                    <input type="text" class="form-control" iid="drip-first-name" name="fields[first_name]" value="" placeholder="Name" minlength="2">
+    
+                </div>                    
+                <div class="form-group col-12 col-md-6">
+                    <label class="sr-only" for="cemail">Email</label>
+                    <input type="email" class="form-control" id="drip-email" name="fields[email]" value="" placeholder="Email">
+    
+                </div>
+                <div class="form-group col-12">
+                    <label class="sr-only" for="cmessage">Your message</label>
+                    <textarea class="form-control" iid="drip-message" name="fields[message]" placeholder="Enter your message" rows="12"></textarea>
+    
+                </div>
+                 <div class="form-group col-12">
+                    <button type="submit" class="btn btn-block btn-cta btn-primary">Send It</button>
+                </div>                           
+            </div><!--//row-->
+            <div id="form-messages"></div>
+        </form><!--//contact-form-->
+    </div>
+</div>
+
+{% endblock %} 
+{% block scripts %}
+
+<script>
+
+</script>
+{% endblock %}

@@ -1,0 +1,127 @@
+.bsh{
+    box-shadow: $box_shadow;
+}
+
+// Mixins
+@mixin G_btn{
+    background: $BLG;
+    border-radius: 30px;
+    color: $db;
+    border: 2px solid $lbr;
+    transition: .7s;
+
+    &:hover{
+        background: transparent;
+        color: $lbr;
+        border:2px solid $br;
+    }
+}
+.G_btn{
+    @include G_btn;
+}
+
+
+@mixin GO_btn{
+    background: transparent;
+    border-radius: 30px;
+    color: $lbr;
+    border: 2px solid $lbr ;
+    transition: .7s;
+
+    &:hover{
+        background: $BLG;
+        color: $db !important;
+    }
+}
+.GO_btn{
+    @include GO_btn
+}
+
+
+
+/* Font weights */
+.fw9 {
+    font-weight: 900;
+}
+
+.fw8 {
+    font-weight: 800;
+}
+
+.fw7, .fwb {
+    font-weight: 700;
+}
+
+.fw6 {
+    font-weight: 600;
+}
+
+.fw5, .fwm {
+    font-weight: 500;
+}
+
+.fw4 {
+    font-weight: 400;
+}
+
+.fw3, .fwl {
+    font-weight: 300;
+}
+
+/* font Sizes */
+@for $i from 1 through 60 {
+    .fz#{$i}{
+        font-size:  $i * 1px +  !important;
+    }
+}
+
+/* Borders */
+
+.bn {
+    border: none;
+}
+
+@for $i from 1 through 60 {
+    .br#{$i}{
+        border-radius: $i * 1px;
+    }
+}
+
+/* Anchor Tags */
+.tdn {
+    text-decoration: none !important;
+}
+
+.tdu {
+    text-decoration: underline;
+}
+
+/* Postions */
+.posr {
+    position: relative;
+}
+
+.posf {
+    position: fixed;
+}
+
+.posa {
+    position: absolute;
+}
+
+/* overflows */
+.oxh {
+    overflow-x: hidden;
+}
+
+.oyh {
+    overflow-y: hidden;
+}
+
+.oxs {
+    overflow-x: scroll;
+}
+
+.oys {
+    overflow-y: scroll;
+}

@@ -1,0 +1,84 @@
+{% set image = false %}
+{% if block.image %}
+{% set image = block.image.one() %}
+{% endif %}
+{% if image %}
+    {% switch block.imageType %}
+        {% case "normal" %}
+<div class="wrap-fixed">
+    <div class="row top-xs">
+        <div class="col-xs-12 col-sm-10 col-sm-offset-1">
+            {% case "fullWidth" %}
+            <div class="wrap-fluid">
+                <div class="row top-xs">
+                    <div class="col-xs-12">
+                        {% case "infographic" %}
+                        <div class="wrap-fluid">
+                            <div class="row top-xs">
+                                <div class="col-xs-12">
+                                    {% endswitch %}
+                                    <div class="box blog-section">
+                                        <figure class="blog">
+                                            {% switch block.imageType %}
+                                            {% case "normal" %}
+
+                                            {% if lazyImage %}
+                                                <img class="scale-with-grid"
+                                                     src="{{ image.url }}"
+                                                     data-sizes="100vw"
+                                                     data-srcset="{{ image.url }}"
+                                                     alt="{{ image.title }}"
+                                                     height="auto"
+                                                     width="100%">
+                                            {% else %}
+                                                <img class="scale-with-grid"
+                                                     src="{{ image.url }}"
+                                                     data-sizes="100vw"
+                                                     srcset="{{ image.url }}"
+                                                     alt="{{ image.title }}"
+                                                     height="auto"
+                                                     width="100%">
+                                            {% endif %}
+                                            {% case "fullWidth" %}
+
+                                            {% if lazyImage %}
+                                                <img class="scale-with-grid"
+                                                     src="{{ image.url }}"
+                                                     data-sizes="100vw"
+                                                     data-srcset="{{ image.url }}"
+                                                     alt="{{ image.title }}" height="auto" width="100%">
+                                            {% else %}
+                                                <img class="scale-with-grid"
+                                                     src="{{ image.url }}"
+                                                     data-sizes="100vw"
+                                                     srcset="{{ image.url }}"
+                                                     alt="{{ image.title }}" height="auto" width="100%">
+                                            {% endif %}
+
+                                            {% case "infographic" %}
+                                            {% if lazyImage %}
+                                            <img class="scale-with-grid"
+                                                 src="{{ image.url }}"
+                                                 data-sizes="100vw"
+                                                 data-srcset="{{ image.url }}"
+                                                 alt="{{ image.title }}" height="auto" width="100%">
+                                            {% else %}
+                                                <img class="scale-with-grid"
+                                                     src="{{ image.url }}"
+                                                     data-sizes="100vw"
+                                                     srcset="{{ image.url }}"
+                                                     alt="{{ image.title }}" height="auto" width="100%">
+                                            {% endif %}
+                                            {% endswitch %}
+
+                                        </figure>
+                                        {% if block.heading |length %}
+                                            <figcaption class="blog-image-caption">
+                                                <p class="blog-image-caption">{{ block.heading }}</p>
+                                            </figcaption>
+                                        {% endif %}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+{% endif %}
